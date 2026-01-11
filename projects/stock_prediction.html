@@ -1,28 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stock Prediction</title>
-  <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Stock Prediction - Project Details</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7f7fa; margin: 0; }
-    .project-detail-container { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 32px rgba(102,126,234,0.10); padding: 40px 32px; }
-    .project-title { font-size: 2.2rem; font-weight: 700; color: #764ba2; margin-bottom: 18px; }
-    .project-image { width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin-bottom: 24px; }
-    .project-desc { font-size: 1.13rem; color: #333; margin-bottom: 18px; }
-    .back-link { display: inline-block; margin-top: 18px; color: #666; text-decoration: none; font-weight: 500; transition: color 0.2s; }
-    .back-link:hover { color: #764ba2; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Open Sans", sans-serif; color: #272829; background: #fff; }
+    a { color: #0563bb; text-decoration: none; }
+    a:hover { color: #067ded; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Raleway", sans-serif; }
+
+    .back-btn {
+      position: fixed; top: 20px; left: 20px; z-index: 999;
+      background: #0563bb; color: #fff; padding: 10px 20px;
+      border-radius: 50px; font-size: 14px; font-weight: 600;
+      transition: all 0.3s; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .back-btn:hover { background: #0678e3; color: #fff; transform: translateX(-5px); }
+    .back-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .projects-details { padding: 60px 0 40px; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 15px; }
+    .row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+    .col-lg-7 { flex: 0 0 58.333333%; max-width: 58.333333%; padding: 0 15px; }
+    .col-lg-5 { flex: 0 0 41.666667%; max-width: 41.666667%; padding: 0 15px; }
+    @media (max-width: 991px) { .col-lg-7, .col-lg-5 { flex: 0 0 100%; max-width: 100%; } }
+
+    .projects-details-slider { margin-top: 20px; }
+    .projects-details-slider .slide-container {
+      position: relative; overflow: hidden; border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(69, 80, 91, 0.15);
+    }
+    .projects-details-slider img {
+      width: 100%; height: auto; max-height: 450px;
+      object-fit: cover; display: block; border-radius: 8px;
+    }
+    .slider-nav { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
+    .slider-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background-color: #fff; border: 2px solid #0563bb;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .slider-dot.active, .slider-dot:hover { background-color: #0563bb; }
+
+    .projects-info {
+      padding: 25px 30px; box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
+      border-radius: 8px; margin-top: 20px; background: #fff;
+    }
+    .projects-info ul { list-style: none; padding: 0; margin: 0; }
+    .projects-info ul li {
+      font-size: 16px; padding: 12px 0; border-bottom: 1px solid #eee; color: #45505b;
+    }
+    .projects-info ul li:last-child { border-bottom: none; }
+    .projects-info ul li strong { color: #0563bb; display: block; margin-top: 5px; font-weight: 600; }
+
+    .projects-description { padding-top: 30px; }
+    .projects-description h2 {
+      font-size: 22px; font-weight: 700; margin-bottom: 20px;
+      color: #45505b; position: relative; padding-bottom: 15px;
+    }
+    .projects-description h2::after {
+      content: ""; position: absolute; display: block;
+      width: 50px; height: 3px; background: #0563bb; bottom: 0; left: 0;
+    }
+    .projects-description ul { list-style: none; padding: 0; }
+    .projects-description ul li {
+      position: relative; padding-left: 25px; margin-bottom: 15px;
+      text-align: justify; line-height: 1.7; color: #555;
+    }
+    .projects-description ul li::before {
+      content: ""; position: absolute; left: 0; top: 10px;
+      width: 8px; height: 8px; border-radius: 50%; background: #0563bb;
+    }
+
+    .footer { background: #f7f8f9; padding: 20px 0; text-align: center; margin-top: 40px; }
+    .footer p { color: #45505b; font-size: 14px; margin: 0; }
+    .footer a { color: #0563bb; font-weight: 600; }
   </style>
 </head>
+
 <body>
-  <div class="project-detail-container">
-    <a href="/" class="back-link">&larr; Back to Portfolio</a>
-    <h1 class="project-title">Stock Prediction</h1>
-    <img src="/assets/projects/stock_prediction.jpg" alt="Stock Prediction" class="project-image" />
-    <div class="project-desc">
-      <p>Implemented time series analysis and prediction models for stock market trends using Python and ML algorithms. This project provides insights into market movements and helps investors make informed decisions using data-driven techniques.</p>
-    </div>
-  </div>
+
+  <a href="/personal-portfolio/" class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to Portfolio
+  </a>
+
+  <main id="main">
+    <section id="projects-details" class="projects-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="projects-details-slider">
+              <div class="slide-container">
+                <img id="main-image" src="/personal-portfolio/assets/img/projects/stock_prediction.png" alt="Stock Prediction Screenshot">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="projects-info">
+              <ul>
+                <li>Project Title:<br><strong>Stock Prediction</strong></li>
+                <li>Tech Stack:<br><strong>Python, Pandas, NumPy, Scikit-learn, TensorFlow</strong></li>
+              </ul>
+            </div>
+            <div class="projects-description">
+              <h2>Project Details</h2>
+              <ul>
+                <li>Implemented time series analysis and prediction models for stock market trends.</li>
+                <li>Used LSTM neural networks for accurate price forecasting.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Aman Vyas. <a href="/personal-portfolio/">Back to Portfolio</a></p>
+  </footer>
+
 </body>
 </html>

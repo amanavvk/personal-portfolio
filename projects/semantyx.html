@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Video Shots Time Detection – Project Details</title>
+  <title>Semantyx – Ontology-Driven Knowledge System</title>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Poppins" rel="stylesheet">
 
@@ -106,20 +105,20 @@
 
     <!-- Project Header -->
     <div class="section">
-      <h1>Video Shots Time Detection</h1>
-      <p style="max-width: 780px; font-size: 16px; line-height: 1.7;">
-        Video Shots Time Detection is a computer vision system designed to automatically
-        identify scene boundaries and shot transitions in long-form video content,
-        enabling efficient media indexing, analytics, and content understanding.
+      <h1>Semantyx</h1>
+      <p style="max-width: 760px; font-size: 16px; line-height: 1.7;">
+        Semantyx is an ontology-driven knowledge system designed to transform relational data
+        into semantically rich knowledge graphs, enabling contextual reasoning, relationship
+        discovery, and intelligent querying across complex domains.
       </p>
     </div>
 
     <!-- Project Meta -->
     <div class="section card">
       <ul class="meta-list">
-        <li><strong>Domain:</strong> Computer Vision & Media Analytics</li>
-        <li><strong>Architecture:</strong> Offline Video Processing Pipeline</li>
-        <li><strong>Tech Stack:</strong> Python, OpenCV, FFmpeg, Machine Learning</li>
+        <li><strong>Domain:</strong> Semantic Web & Knowledge Graphs</li>
+        <li><strong>Architecture:</strong> Ontology-Driven Data Platform</li>
+        <li><strong>Tech Stack:</strong> Python, RDF, OWL, Neo4j, FastAPI</li>
       </ul>
     </div>
 
@@ -128,42 +127,46 @@
       <h2>Problem → Solution → Impact</h2>
       <ul class="content-list">
         <li>
-          <strong>Problem:</strong> Manual identification of scene boundaries in videos
-          is time-consuming and error-prone, making large-scale video analysis inefficient.
+          <strong>Problem:</strong> Traditional relational databases store data in isolated tables,
+          making it difficult to capture semantic meaning, infer relationships, and perform
+          intelligent reasoning across domains.
         </li>
 
         <li>
-          <strong>Solution:</strong> Designed a frame-by-frame video processing pipeline
-          using OpenCV and FFmpeg to detect abrupt and gradual shot transitions based on
-          visual feature changes.
+          <strong>Solution:</strong> Designed domain ontologies using OWL and RDF, and implemented
+          R2RML-based transformations to convert relational data into a semantic knowledge graph
+          stored in Neo4j.
         </li>
 
         <li>
-          <strong>Impact:</strong> Enabled automated extraction of shot timestamps,
-          significantly improving the speed and accuracy of video content analysis
-          for downstream applications.
+          <strong>Impact:</strong> Enabled contextual querying, semantic reasoning, and discovery
+          of implicit relationships, significantly improving the system’s ability to support
+          intelligent decision-making.
         </li>
       </ul>
     </div>
 
-    <!-- System Design & Engineering -->
+    <!-- System Design & Architecture -->
     <div class="section card">
-      <h2>System Design & Engineering</h2>
+      <h2>System Design & Architecture</h2>
       <ul class="content-list">
         <li>
-          Implemented efficient video decoding using FFmpeg to process large video files
-          without loading entire videos into memory.
+          Modeled domain knowledge using OWL ontologies to define entities, relationships,
+          and constraints explicitly.
         </li>
         <li>
-          Extracted visual features (histograms, frame differences) to identify scene changes.
+          Built an R2RML transformation pipeline to convert structured SQL data into RDF triples.
         </li>
         <li>
-          Applied threshold-based and ML-assisted heuristics to detect both hard cuts
-          and gradual transitions.
+          Stored and queried semantic data using a graph database (Neo4j) optimized for
+          relationship traversal.
         </li>
         <li>
-          Designed the pipeline to be modular, allowing easy tuning of detection parameters
-          and extension to additional video analytics tasks.
+          Exposed semantic queries and graph operations through FastAPI-based REST endpoints.
+        </li>
+        <li>
+          Designed the system to be extensible, allowing new ontologies and data sources
+          to be integrated with minimal changes.
         </li>
       </ul>
     </div>
@@ -172,9 +175,9 @@
     <div class="section card">
       <h2>Engineering Focus</h2>
       <ul class="content-list">
-        <li>Optimized for performance on long-duration videos.</li>
-        <li>Focused on accuracy, scalability, and reproducibility of results.</li>
-        <li>Designed as a reusable backend component for media analytics platforms.</li>
+        <li>Strong separation between data ingestion, semantic modeling, and query layers.</li>
+        <li>Focused on correctness, explainability, and consistency of inferred knowledge.</li>
+        <li>Optimized graph queries for performance and reasoning efficiency.</li>
       </ul>
     </div>
 

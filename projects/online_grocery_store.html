@@ -1,28 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Online Grocery Store</title>
-  <link rel="stylesheet" href="../style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Grocery Store – Project Details</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Poppins" rel="stylesheet">
+
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7f7fa; margin: 0; }
-    .project-detail-container { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 32px rgba(102,126,234,0.10); padding: 40px 32px; }
-    .project-title { font-size: 2.2rem; font-weight: 700; color: #764ba2; margin-bottom: 18px; }
-    .project-image { width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin-bottom: 24px; }
-    .project-desc { font-size: 1.13rem; color: #333; margin-bottom: 18px; }
-    .back-link { display: inline-block; margin-top: 18px; color: #666; text-decoration: none; font-weight: 500; transition: color 0.2s; }
-    .back-link:hover { color: #764ba2; }
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: #272829;
+      background: #fff;
+    }
+
+    h1, h2 {
+      font-family: "Raleway", sans-serif;
+      color: #45505b;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: #0563bb;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #0563bb;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .card {
+      box-shadow: 0 0 30px rgba(69, 80, 91, 0.08);
+      padding: 28px;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .meta-list,
+    .content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .meta-list li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .meta-list strong {
+      color: #0563bb;
+    }
+
+    .content-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .content-list li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #0563bb;
+      font-size: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f7f8f9;
+      font-size: 14px;
+      margin-top: 60px;
+    }
   </style>
 </head>
+
 <body>
-  <div class="project-detail-container">
-    <a href="/" class="back-link">&larr; Back to Portfolio</a>
-    <h1 class="project-title">Online Grocery Store</h1>
-    <img src="/assets/projects/online_grocery_store.jpg" alt="Online Grocery Store" class="project-image" />
-    <div class="project-desc">
-      <p>Developed a full-stack online grocery store with real-time inventory and order management. The platform supports user authentication, product browsing, and secure checkout for a seamless shopping experience.</p>
+
+<a href="/personal-portfolio/" class="back-btn">← Back to Portfolio</a>
+
+<main>
+  <section class="container" style="padding-top:90px;">
+
+    <!-- Project Header -->
+    <div class="section">
+      <h1>Online Grocery Store</h1>
+      <p style="max-width: 780px; font-size: 16px; line-height: 1.7;">
+        Online Grocery Store is a full-stack e-commerce system designed to support
+        product browsing, cart management, and order processing with strong emphasis
+        on backend data consistency and transactional reliability.
+      </p>
     </div>
-  </div>
+
+    <!-- Project Meta -->
+    <div class="section card">
+      <ul class="meta-list">
+        <li><strong>Domain:</strong> E-commerce Platforms</li>
+        <li><strong>Architecture:</strong> Server-Rendered Web Application</li>
+        <li><strong>Tech Stack:</strong> Java, JSP, JDBC, MySQL, Bootstrap</li>
+      </ul>
+    </div>
+
+    <!-- Problem → Solution → Impact -->
+    <div class="section card">
+      <h2>Problem → Solution → Impact</h2>
+      <ul class="content-list">
+        <li>
+          <strong>Problem:</strong> Managing real-time product availability, cart state,
+          and user sessions in a multi-user shopping environment while maintaining
+          data consistency.
+        </li>
+
+        <li>
+          <strong>Solution:</strong> Designed a backend-driven shopping workflow using
+          JDBC-based data access layers, server-side JSP rendering, and transactional
+          MySQL operations to ensure consistent cart and inventory state.
+        </li>
+
+        <li>
+          <strong>Impact:</strong> Delivered a reliable shopping experience with accurate
+          cart updates, reduced data anomalies, and smooth checkout flow.
+        </li>
+      </ul>
+    </div>
+
+    <!-- System Design & Engineering -->
+    <div class="section card">
+      <h2>System Design & Engineering</h2>
+      <ul class="content-list">
+        <li>
+          Designed normalized MySQL schemas for products, users, carts, and orders.
+        </li>
+        <li>
+          Implemented JDBC-based DAO layer to isolate database access logic.
+        </li>
+        <li>
+          Ensured transactional consistency during cart updates and order placement.
+        </li>
+        <li>
+          Used server-side rendering (JSP) to reduce frontend complexity and
+          centralize business logic.
+        </li>
+        <li>
+          Handled concurrent user interactions through session management.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Engineering Focus -->
+    <div class="section card">
+      <h2>Engineering Focus</h2>
+      <ul class="content-list">
+        <li>Backend correctness over UI complexity.</li>
+        <li>Clear separation of presentation, business logic, and data layers.</li>
+        <li>Foundational understanding of e-commerce system design.</li>
+      </ul>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2024 Aman Vyas
+</footer>
+
 </body>
 </html>
