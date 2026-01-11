@@ -1,144 +1,248 @@
 
 import React from 'react';
-import { Container, Typography, Grid, Card, CardMedia, CardContent } from '@mui/material';
+import { Container, Typography, Box, useTheme } from '@mui/material';
 
 const projects = [
-  {
-    title: 'Plastic Object Detection',
-    link: '/projects/plastic_detection.html',
-    image: '/assets/projects/plastic_detection.jpg',
-    desc: 'Developed a machine learning model to detect plastic objects in images, improving environmental monitoring.'
+    {
+    title: 'Road Building Machines Simulation Software',
+    link: './projects/road_building_machines_simulation_software.html',
+    image: 'src/assets/img/road building.png',
   },
+      {
+    title: 'SyncForge – Reliable Event-Driven Microservices',
+    link: './projects/syncforge.html',
+    image: 'src/assets/img/sync.png',
+  },
+  {
+    title: 'Semantyx – Ontology Driven Knowledge System',
+    link: './projects/semantyx.html',
+    image: 'src/assets/img/sym.png',
+  },
+  
   {
     title: 'Video Shots Time Detection',
-    link: '/projects/video_shots_time_detection.html',
-    image: '/assets/projects/video_shots_time_detection.jpg',
-    desc: 'Created a tool to detect and analyze video shot boundaries and timings for media analytics.'
+    link: './projects/video_shots_time_detection.html',
+    image: 'src/assets/img/projects6.jpg',
   },
-  {
-    title: 'Stock Prediction',
-    link: '/projects/stock_prediction.html',
-    image: '/assets/projects/stock_prediction.jpg',
-    desc: 'Implemented time series analysis and prediction models for stock market trends using Python and ML algorithms.'
-  },
-  {
-    title: 'E-commerce Trends Analysis',
-    link: '/projects/ecommerce_trends.html',
-    image: '/assets/projects/ecommerce_trends.jpg',
-    desc: 'Analyzed e-commerce data to identify trends and provide actionable business insights.'
-  },
-  {
-    title: 'Product Search Android App',
-    link: '/projects/product_search_android_app.html',
-    image: '/assets/projects/product_search_android_app.jpg',
-    desc: 'Built an Android app for searching and comparing products across multiple e-commerce platforms.'
-  },
+  
+ 
   {
     title: 'Online Grocery Store',
-    link: '/projects/online_grocery_store.html',
-    image: '/assets/projects/online_grocery_store.jpg',
-    desc: 'Developed a full-stack online grocery store with real-time inventory and order management.'
+    link: './projects/online_grocery_store.html',
+    image: 'src/assets/img/projects4.jpg',
   },
-  {
-    title: 'Covid Patient Monitoring',
-    link: '/projects/covid_patient_monitoring.html',
-    image: '/assets/projects/covid_patient_monitoring.jpg',
-    desc: 'Created a dashboard for monitoring and analyzing Covid patient data for hospitals.'
-  },
+ 
   {
     title: 'Website Syncing Ebay Data',
-    link: '/projects/website_syncing_ebay_data.html',
-    image: '/assets/projects/website_syncing_ebay_data.jpg',
-    desc: 'Engineered a solution to sync and visualize eBay data for business intelligence.'
+    link: './projects/website_syncing_ebay_data.html',
+    image: 'src/assets/img/projects8.png',
   },
 ];
 
 function Projects() {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === 'dark';
+  
   return (
-    <section id="projects">
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Typography variant="h4" align="center" fontWeight={700} sx={{ mb: 6, color: '#764ba2', letterSpacing: 1 }}>
-          Projects
-        </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.title} style={{ display: 'flex', justifyContent: 'center' }}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none', width: '100%' }}
+    <Box 
+      component="section" 
+      id="projects" 
+      sx={{ 
+        py: 4, 
+        overflow: 'hidden',
+        bgcolor: isDark ? '#1a1a2e' : '#f5f6f7',
+      }}
+    >
+      <Container maxWidth="lg" data-aos="fade-up">
+        {/* Section Title */}
+        <Box sx={{ textAlign: 'center', pb: 4 }}>
+          <Typography 
+            variant="h5" 
+            component="h2"
+            sx={{ 
+              fontSize: '32px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              pb: 2.5,
+              position: 'relative',
+              color: isDark ? '#fff' : '#45505b',
+              fontFamily: '"Raleway", sans-serif',
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                display: 'block',
+                width: '120px',
+                height: '1px',
+                background: isDark ? '#444' : '#ddd',
+                bottom: '1px',
+                left: 'calc(50% - 60px)',
+              },
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                display: 'block',
+                width: '40px',
+                height: '3px',
+                background: '#0563bb',
+                bottom: 0,
+                left: 'calc(50% - 20px)',
+              },
+            }}
+          >
+            PROJECTS
+          </Typography>
+        </Box>
+
+        {/* Projects Grid */}
+        <Box 
+          className="projects-container"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          sx={{ 
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: '1fr',
+              sm: 'repeat(2, 1fr)',
+              md: 'repeat(3, 1fr)'
+            },
+            gap: 3,
+          }}
+        >
+          {projects.map((project, index) => (
+            <Box
+              key={project.title}
+              className="projects-item"
+              sx={{ mb: 0 }}
+            >
+              <Box
+                className="projects-wrap"
+                sx={{
+                  transition: '0.3s',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  zIndex: 1,
+                  background: 'rgba(69, 80, 91, 0.8)',
+                  '&::before': {
+                    content: '""',
+                    background: 'rgba(255, 255, 255, 0.7)',
+                    position: 'absolute',
+                    left: '30px',
+                    right: '30px',
+                    top: '30px',
+                    bottom: '30px',
+                    transition: 'all ease-in-out 0.3s',
+                    zIndex: 2,
+                    opacity: 0,
+                  },
+                  '&:hover::before': {
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    opacity: 1,
+                  },
+                  '&:hover .projects-info': {
+                    opacity: 1,
+                  },
+                  '&:hover .projects-info::before': {
+                    top: '15px',
+                    left: '15px',
+                  },
+                  '&:hover .projects-info::after': {
+                    bottom: '15px',
+                    right: '15px',
+                  },
+                }}
               >
-                <Card
+                <Box
+                  component="img"
+                  src={project.image}
+                  alt={`Project-${index + 1}`}
+                  className="img-fluid"
                   sx={{
-                    borderRadius: 4,
-                    boxShadow: '0 4px 24px rgba(102,126,234,0.10)',
-                    border: '1.5px solid #e0e0e0',
-                    transition: 'transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s cubic-bezier(.4,2,.6,1)',
-                    '&:hover': {
-                      transform: 'translateY(-12px) scale(1.03)',
-                      boxShadow: '0 12px 32px rgba(102,126,234,0.18)',
-                      borderColor: '#764ba2',
-                    },
                     width: '100%',
-                    maxWidth: 350,
-                    minHeight: 360,
+                    height: 'auto',
+                    display: 'block',
+                  }}
+                />
+                <Box
+                  className="projects-info"
+                  sx={{
+                    opacity: 0,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    textAlign: 'center',
+                    zIndex: 3,
+                    transition: 'all ease-in-out 0.3s',
                     display: 'flex',
                     flexDirection: 'column',
+                    justifyContent: 'center',
                     alignItems: 'center',
-                    background: '#fff',
-                    overflow: 'hidden',
-                    position: 'relative',
+                    '&::before': {
+                      display: 'block',
+                      content: '""',
+                      width: '48px',
+                      height: '48px',
+                      position: 'absolute',
+                      top: '35px',
+                      left: '35px',
+                      borderTop: '3px solid #d7dce1',
+                      borderLeft: '3px solid #d7dce1',
+                      transition: 'all 0.5s ease 0s',
+                      zIndex: 9994,
+                    },
+                    '&::after': {
+                      display: 'block',
+                      content: '""',
+                      width: '48px',
+                      height: '48px',
+                      position: 'absolute',
+                      bottom: '35px',
+                      right: '35px',
+                      borderBottom: '3px solid #d7dce1',
+                      borderRight: '3px solid #d7dce1',
+                      transition: 'all 0.5s ease 0s',
+                      zIndex: 9994,
+                    },
                   }}
                 >
-                  <div style={{ position: 'relative', width: '100%' }}>
-                    <CardMedia
-                      component="img"
-                      image={project.image}
-                      alt={project.title}
-                      sx={{ width: '100%', height: 180, objectFit: 'cover', borderRadius: '14px 14px 0 0', filter: 'brightness(0.97)' }}
-                    />
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        background: 'linear-gradient(180deg,rgba(102,126,234,0.08) 0%,rgba(118,75,162,0.10) 100%)',
-                        pointerEvents: 'none',
-                      }}
-                    />
-                  </div>
-                  <CardContent sx={{ flexGrow: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <Typography
-                      variant="h6"
-                      align="center"
-                      fontWeight={700}
+                  <Typography
+                    variant="h4"
+                    component="h4"
+                    sx={{
+                      fontSize: '20px',
+                      color: '#45505b',
+                      fontWeight: 600,
+                      fontFamily: '"Raleway", sans-serif',
+                    }}
+                  >
+                    <Box
+                      component="a"
+                      href={project.link}
+                      className="projects-details-lightbox"
+                      data-glightbox="type: external"
+                      title="projects Details"
                       sx={{
-                        color: '#222',
-                        width: '100%',
-                        letterSpacing: 0.5,
-                        textTransform: 'capitalize',
-                        fontSize: '1.18rem',
-                        transition: 'color 0.2s',
-                        mb: 1,
-                        '&:hover': { color: '#764ba2' },
+                        textDecoration: 'underline',
+                        color: '#45505b',
+                        '&:hover': {
+                          color: '#0563bb',
+                        },
                       }}
                     >
                       {project.title}
-                    </Typography>
-                    <Typography variant="body2" align="center" sx={{ color: '#555', fontSize: '0.98rem' }}>
-                      {project.desc}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </a>
-            </Grid>
+                    </Box>
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
-    </section>
+    </Box>
   );
 }
 

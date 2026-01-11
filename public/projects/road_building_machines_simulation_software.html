@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kleeflow – Road Building Machine Simulation Platform</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Poppins" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: #272829;
+      background: #fff;
+    }
+
+    h1, h2 {
+      font-family: "Raleway", sans-serif;
+      color: #45505b;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: #0563bb;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #0563bb;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .card {
+      box-shadow: 0 0 30px rgba(69, 80, 91, 0.08);
+      padding: 28px;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .meta-list,
+    .content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .meta-list li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .meta-list strong {
+      color: #0563bb;
+    }
+
+    .content-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .content-list li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #0563bb;
+      font-size: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f7f8f9;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="/personal-portfolio/" class="back-btn">← Back to Portfolio</a>
+
+<main>
+  <section class="container" style="padding-top:90px;">
+
+    <!-- Project Header -->
+    <div class="section">
+      <h1>Kleeflow</h1>
+      <p style="max-width: 760px; font-size: 16px; line-height: 1.7;">
+        Kleeflow is a full-scale simulation platform for road-building and construction machines,
+        designed to model real-world equipment behavior, production flow, and operational constraints.
+        I led the development of the system end-to-end, spanning backend architecture, frontend PWA,
+        and simulation logic.
+      </p>
+    </div>
+
+    <!-- Project Meta -->
+    <div class="section card">
+      <ul class="meta-list">
+        <li><strong>Role:</strong> Tech Lead & Backend Architect</li>
+        <li><strong>Team Size:</strong> 4 Engineers</li>
+        <li><strong>Domain:</strong> Industrial Simulation Software</li>
+        <li><strong>Tech Stack:</strong> Java, Spring Boot, React, PWA, REST APIs</li>
+        <li><strong>Architecture:</strong> Modular Microservices + Simulation Engine</li>
+      </ul>
+    </div>
+
+    <!-- Problem → Solution → Impact -->
+    <div class="section card">
+      <h2>Problem → Solution → Impact</h2>
+      <ul class="content-list">
+        <li>
+          <strong>Problem:</strong> Existing planning tools for road-building machines lacked
+          accurate simulation of equipment behavior, production flow, and system constraints,
+          leading to inefficient planning and costly operational decisions.
+        </li>
+
+        <li>
+          <strong>Solution:</strong> Designed and built a simulation platform that models
+          machine interactions, material flow, and operational parameters using a modular,
+          backend-driven architecture with a real-time, interactive PWA frontend.
+        </li>
+
+        <li>
+          <strong>Impact:</strong> Enabled engineers and planners to simulate multiple
+          configurations, detect bottlenecks early, and optimize machine utilization before
+          deployment, significantly improving planning accuracy and decision-making.
+        </li>
+      </ul>
+    </div>
+
+    <!-- System Design & Architecture -->
+    <div class="section card">
+      <h2>System Design & Architecture</h2>
+      <ul class="content-list">
+        <li>
+          Designed a layered backend architecture separating simulation core logic,
+          domain models, and REST API exposure.
+        </li>
+        <li>
+          Implemented stateless Spring Boot services to support horizontal scalability
+          and future cloud deployment.
+        </li>
+        <li>
+          Modeled machine entities, workflows, and dependencies to accurately reflect
+          real-world road construction processes.
+        </li>
+        <li>
+          Used event-driven communication internally to propagate state changes across
+          simulation components.
+        </li>
+        <li>
+          Designed APIs to support deterministic simulation runs and reproducible results.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Frontend & PWA Design -->
+    <div class="section card">
+      <h2>Frontend & PWA Architecture</h2>
+      <ul class="content-list">
+        <li>
+          Built a React-based Progressive Web App to deliver a responsive, offline-capable
+          user experience for engineers and planners.
+        </li>
+        <li>
+          Implemented real-time visualization of simulation results, machine states,
+          and production metrics.
+        </li>
+        <li>
+          Designed the frontend to be backend-driven, enabling rapid iteration of
+          simulation logic without UI rewrites.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Leadership & Ownership -->
+    <div class="section card">
+      <h2>Leadership & Ownership</h2>
+      <ul class="content-list">
+        <li>
+          Led a cross-functional team of engineers, owning technical direction,
+          architecture decisions, and code quality.
+        </li>
+        <li>
+          Broke down complex simulation requirements into modular components
+          and assigned clear ownership across the team.
+        </li>
+        <li>
+          Conducted design reviews, enforced coding standards, and mentored
+          junior engineers throughout development.
+        </li>
+      </ul>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2024 Aman Vyas
+</footer>
+
+</body>
+</html>

@@ -1,32 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plastic Object Detection</title>
-  <link rel="stylesheet" href="/assets/projects/project-detail.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Plastic Object Detection - Project Details</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Open Sans", sans-serif; color: #272829; background: #fff; }
+    a { color: #0563bb; text-decoration: none; }
+    a:hover { color: #067ded; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Raleway", sans-serif; }
+
+    .back-btn {
+      position: fixed; top: 20px; left: 20px; z-index: 999;
+      background: #0563bb; color: #fff; padding: 10px 20px;
+      border-radius: 50px; font-size: 14px; font-weight: 600;
+      transition: all 0.3s; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .back-btn:hover { background: #0678e3; color: #fff; transform: translateX(-5px); }
+    .back-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .projects-details { padding: 60px 0 40px; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 15px; }
+    .row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+    .col-lg-7 { flex: 0 0 58.333333%; max-width: 58.333333%; padding: 0 15px; }
+    .col-lg-5 { flex: 0 0 41.666667%; max-width: 41.666667%; padding: 0 15px; }
+    @media (max-width: 991px) { .col-lg-7, .col-lg-5 { flex: 0 0 100%; max-width: 100%; } }
+
+    .projects-details-slider { margin-top: 20px; }
+    .projects-details-slider .slide-container {
+      position: relative; overflow: hidden; border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(69, 80, 91, 0.15);
+    }
+    .projects-details-slider img {
+      width: 100%; height: auto; max-height: 450px;
+      object-fit: cover; display: block; border-radius: 8px;
+    }
+    .slider-nav { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
+    .slider-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background-color: #fff; border: 2px solid #0563bb;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .slider-dot.active, .slider-dot:hover { background-color: #0563bb; }
+
+    .projects-info {
+      padding: 25px 30px; box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
+      border-radius: 8px; margin-top: 20px; background: #fff;
+    }
+    .projects-info ul { list-style: none; padding: 0; margin: 0; }
+    .projects-info ul li {
+      font-size: 16px; padding: 12px 0; border-bottom: 1px solid #eee; color: #45505b;
+    }
+    .projects-info ul li:last-child { border-bottom: none; }
+    .projects-info ul li strong { color: #0563bb; display: block; margin-top: 5px; font-weight: 600; }
+
+    .projects-description { padding-top: 30px; }
+    .projects-description h2 {
+      font-size: 22px; font-weight: 700; margin-bottom: 20px;
+      color: #45505b; position: relative; padding-bottom: 15px;
+    }
+    .projects-description h2::after {
+      content: ""; position: absolute; display: block;
+      width: 50px; height: 3px; background: #0563bb; bottom: 0; left: 0;
+    }
+    .projects-description ul { list-style: none; padding: 0; }
+    .projects-description ul li {
+      position: relative; padding-left: 25px; margin-bottom: 15px;
+      text-align: justify; line-height: 1.7; color: #555;
+    }
+    .projects-description ul li::before {
+      content: ""; position: absolute; left: 0; top: 10px;
+      width: 8px; height: 8px; border-radius: 50%; background: #0563bb;
+    }
+
+    .footer { background: #f7f8f9; padding: 20px 0; text-align: center; margin-top: 40px; }
+    .footer p { color: #45505b; font-size: 14px; margin: 0; }
+    .footer a { color: #0563bb; font-weight: 600; }
+  </style>
 </head>
-<body style="font-family: 'Poppins', Arial, sans-serif; background: #f5f6fa; margin: 0;">
-  <div style="max-width: 800px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 32px rgba(102,126,234,0.10); padding: 32px;">
-    <h1 style="color: #667eea; font-size: 2.4rem; margin-bottom: 16px;">Plastic Object Detection</h1>
-    <img src="/assets/projects/plastic_detection.jpg" alt="Plastic Object Detection" style="width: 100%; border-radius: 12px; margin-bottom: 24px;">
-    <h2 style="color: #764ba2; font-size: 1.3rem; margin-bottom: 12px;">Project Overview</h2>
-    <p style="color: #333; font-size: 1.08rem;">Developed a machine learning model to detect plastic objects in images, improving environmental monitoring. Utilized convolutional neural networks (CNNs) for image classification and detection, and built a user-friendly dashboard for visualizing results. The project aimed to assist environmental agencies in tracking plastic waste and automating data collection from field images.</p>
-    <h2 style="color: #764ba2; font-size: 1.3rem; margin-top: 32px;">Key Features</h2>
-    <ul style="color: #444; font-size: 1.05rem;">
-      <li>Automated detection of plastic objects in diverse environments</li>
-      <li>High-accuracy CNN model trained on a custom dataset</li>
-      <li>Interactive dashboard for result visualization</li>
-      <li>Exportable reports for environmental analysis</li>
-    </ul>
-    <h2 style="color: #764ba2; font-size: 1.3rem; margin-top: 32px;">Technologies Used</h2>
-    <ul style="color: #444; font-size: 1.05rem;">
-      <li>Python, TensorFlow, Keras</li>
-      <li>OpenCV for image processing</li>
-      <li>Flask for backend API</li>
-      <li>React.js for dashboard UI</li>
-    </ul>
-    <a href="/" style="display: inline-block; margin-top: 32px; color: #fff; background: linear-gradient(90deg, #667eea, #764ba2); padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 600;">Back to Portfolio</a>
-  </div>
+
+<body>
+
+  <a href="/personal-portfolio/" class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to Portfolio
+  </a>
+
+  <main id="main">
+    <section id="projects-details" class="projects-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="projects-details-slider">
+              <div class="slide-container">
+                <img id="main-image" src="/personal-portfolio/assets/img/projects/plastic1.png" alt="Plastic Object Detection Screenshot">
+              </div>
+              <div class="slider-nav">
+                <span class="slider-dot active" onclick="changeImage('/assets/img/projects/plastic1.png', this)"></span>
+                <span class="slider-dot" onclick="changeImage('/assets/img/projects/plastic2.png', this)"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="projects-info">
+              <ul>
+                <li>Project Title:<br><strong>Plastic Object Detection</strong></li>
+                <li>Tech Stack:<br><strong>Python, YOLO, PyTorch, TensorFlow, Scikit-learn</strong></li>
+              </ul>
+            </div>
+            <div class="projects-description">
+              <h2>Project Details</h2>
+              <ul>
+                <li>Implemented the YOLO (You Only Look Once) object detection algorithm to automate waste classification into plastic and non-plastic categories, enabling smarter waste management systems and promoting sustainable environmental practices.</li>
+                <li>Trained and fine-tuned the Tiny-YOLOv5s deep learning model to achieve an impressive 87% accuracy, utilizing a well-curated dataset of 780 training images and 249 validation images. The project leveraged PyTorch and TensorFlow for model development and training, with Scikit-learn employed for performance evaluation and analysis.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Aman Vyas. <a href="/personal-portfolio/">Back to Portfolio</a></p>
+  </footer>
+
+  <script>
+    function changeImage(src, element) {
+      document.getElementById('main-image').src = src;
+      document.querySelectorAll('.slider-dot').forEach(dot => dot.classList.remove('active'));
+      element.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>

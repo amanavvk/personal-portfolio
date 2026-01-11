@@ -8,6 +8,8 @@ import TimelineSection from './components/TimelineSection';
 import Contact from './components/Contact';
 import ScrollTopFab from './components/ScrollTopFab';
 import ThemeToggle from './components/ThemeToggle';
+import CertificationsSection from './components/CertificationsSection';
+import SideNav from './components/SideNav';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { Container, Box, Typography, Grid, Card, CardContent, Button } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
@@ -47,10 +49,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <SideNav />
       <ThemeToggle toggleTheme={toggleTheme} />
       <Hero />
       <Skills />
       <Projects />
+      <CertificationsSection />
       <TimelineSection />
       <Contact />
       <ScrollTopFab />

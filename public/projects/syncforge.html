@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Video Shots Time Detection – Project Details</title>
+  <title>SyncForge – Reliable Event-Driven Microservices</title>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Poppins" rel="stylesheet">
 
@@ -16,7 +15,7 @@
       background: #fff;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       font-family: "Raleway", sans-serif;
       color: #45505b;
       margin-bottom: 12px;
@@ -55,8 +54,7 @@
       background: #fff;
     }
 
-    .meta-list,
-    .content-list {
+    .meta-list {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -69,6 +67,12 @@
 
     .meta-list strong {
       color: #0563bb;
+    }
+
+    .content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
     .content-list li {
@@ -106,20 +110,19 @@
 
     <!-- Project Header -->
     <div class="section">
-      <h1>Video Shots Time Detection</h1>
-      <p style="max-width: 780px; font-size: 16px; line-height: 1.7;">
-        Video Shots Time Detection is a computer vision system designed to automatically
-        identify scene boundaries and shot transitions in long-form video content,
-        enabling efficient media indexing, analytics, and content understanding.
+      <h1>SyncForge</h1>
+      <p style="max-width: 720px; font-size: 16px; line-height: 1.7;">
+        A backend-focused, event-driven microservices system designed to solve data consistency
+        challenges in distributed architectures using CDC and reliable messaging patterns.
       </p>
     </div>
 
     <!-- Project Meta -->
     <div class="section card">
       <ul class="meta-list">
-        <li><strong>Domain:</strong> Computer Vision & Media Analytics</li>
-        <li><strong>Architecture:</strong> Offline Video Processing Pipeline</li>
-        <li><strong>Tech Stack:</strong> Python, OpenCV, FFmpeg, Machine Learning</li>
+        <li><strong>Domain:</strong> Distributed Systems</li>
+        <li><strong>Architecture:</strong> Event-Driven Microservices</li>
+        <li><strong>Tech Stack:</strong> Java, Spring Boot, Kafka, Debezium, PostgreSQL</li>
       </ul>
     </div>
 
@@ -128,53 +131,31 @@
       <h2>Problem → Solution → Impact</h2>
       <ul class="content-list">
         <li>
-          <strong>Problem:</strong> Manual identification of scene boundaries in videos
-          is time-consuming and error-prone, making large-scale video analysis inefficient.
+          <strong>Problem:</strong> Microservices experienced data inconsistency caused by the
+          Dual Write Problem, where database commits and Kafka event publishing could fail independently.
         </li>
 
         <li>
-          <strong>Solution:</strong> Designed a frame-by-frame video processing pipeline
-          using OpenCV and FFmpeg to detect abrupt and gradual shot transitions based on
-          visual feature changes.
+          <strong>Solution:</strong> Implemented the Outbox Pattern with Debezium CDC to atomically
+          capture database changes and stream them to Kafka, combined with idempotent consumers.
         </li>
 
         <li>
-          <strong>Impact:</strong> Enabled automated extraction of shot timestamps,
-          significantly improving the speed and accuracy of video content analysis
-          for downstream applications.
+          <strong>Impact:</strong> Achieved 99.99% reliable event delivery under high load while
+          maintaining loose coupling, fault tolerance, and scalability across services.
         </li>
       </ul>
     </div>
 
-    <!-- System Design & Engineering -->
+    <!-- Architecture Highlights -->
     <div class="section card">
-      <h2>System Design & Engineering</h2>
+      <h2>Architecture Highlights</h2>
       <ul class="content-list">
-        <li>
-          Implemented efficient video decoding using FFmpeg to process large video files
-          without loading entire videos into memory.
-        </li>
-        <li>
-          Extracted visual features (histograms, frame differences) to identify scene changes.
-        </li>
-        <li>
-          Applied threshold-based and ML-assisted heuristics to detect both hard cuts
-          and gradual transitions.
-        </li>
-        <li>
-          Designed the pipeline to be modular, allowing easy tuning of detection parameters
-          and extension to additional video analytics tasks.
-        </li>
-      </ul>
-    </div>
-
-    <!-- Engineering Focus -->
-    <div class="section card">
-      <h2>Engineering Focus</h2>
-      <ul class="content-list">
-        <li>Optimized for performance on long-duration videos.</li>
-        <li>Focused on accuracy, scalability, and reproducibility of results.</li>
-        <li>Designed as a reusable backend component for media analytics platforms.</li>
+        <li>Transactional outbox table ensured atomic database writes and event publication.</li>
+        <li>Debezium CDC streamed changes without requiring changes to core business logic.</li>
+        <li>Kafka-based asynchronous messaging enabled horizontal scalability.</li>
+        <li>Idempotent consumers prevented duplicate processing during retries and failures.</li>
+        <li>Designed for resilience, replayability, and graceful recovery from partial failures.</li>
       </ul>
     </div>
 
