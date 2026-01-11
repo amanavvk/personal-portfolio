@@ -2,13 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container, Typography, Grid, Box, Button, Card, CardContent, Fade, useTheme } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+// Use import.meta.env.BASE_URL for proper path resolution on GitHub Pages
+const getImagePath = (filename) => `${import.meta.env.BASE_URL}assets/img/${filename}`;
+
 const certifications = [
   
  {
   title: 'Advanced Java, Spring Boot & Spring AI',
   skills: 'Java, Spring Boot, REST APIs, Microservices, Spring AI, LLM Integration',
   desc: 'Advanced backend engineering & AI-driven system design:',
-  img: 'src/assets/img/certificate2.jpg',
+  img: getImagePath('certificate2.jpg'),
   info: 'https://www.udemy.com/certificate/UC-6f1e98a2-8a99-4494-9f84-e6bfcd1615d6/',
   date: '2024',
   issuer: 'Udemy',
@@ -19,7 +22,7 @@ const certifications = [
     title: 'Advanced Database Engineering',
     skills: 'Database Internals, Indexing, Query Optimization, Transactions, ACID, Schema Design',
     desc: 'Skills gained:',
-    img: 'src/assets/img/certificate1.jpg',
+    img: getImagePath('certificate1.jpg'),
     info: 'https://www.udemy.com/certificate/UC-73815389-bc15-49bd-a09f-699c44ea7456/',
     date: '2025',
     issuer: 'Udemy',

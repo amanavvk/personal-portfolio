@@ -4,41 +4,42 @@ import { Container, Typography, Box, useTheme } from '@mui/material';
 
 // Use import.meta.env.BASE_URL for proper path resolution on GitHub Pages
 const getProjectLink = (filename) => `${import.meta.env.BASE_URL}projects/${filename}`;
+const getImagePath = (filename) => `${import.meta.env.BASE_URL}assets/img/${filename}`;
 
 const projects = [
     {
     title: 'Road Building Machines Simulation Software',
     link: getProjectLink('road_building_machines_simulation_software.html'),
-    image: 'src/assets/img/road building.png',
+    image: getImagePath('road building.png'),
   },
       {
     title: 'SyncForge – Reliable Event-Driven Microservices',
     link: getProjectLink('syncforge.html'),
-    image: 'src/assets/img/sync.png',
+    image: getImagePath('sync.png'),
   },
   {
     title: 'Semantyx – Ontology Driven Knowledge System',
     link: getProjectLink('semantyx.html'),
-    image: 'src/assets/img/sym.png',
+    image: getImagePath('sym.png'),
   },
   
   {
     title: 'Video Shots Time Detection',
     link: getProjectLink('video_shots_time_detection.html'),
-    image: 'src/assets/img/projects6.jpg',
+    image: getImagePath('projects6.jpg'),
   },
   
  
   {
     title: 'Online Grocery Store',
     link: getProjectLink('online_grocery_store.html'),
-    image: 'src/assets/img/projects4.jpg',
+    image: getImagePath('projects4.jpg'),
   },
  
   {
     title: 'Website Syncing Ebay Data',
     link: getProjectLink('website_syncing_ebay_data.html'),
-    image: 'src/assets/img/projects8.png',
+    image: getImagePath('projects8.png'),
   },
 ];
 
