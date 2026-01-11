@@ -2,39 +2,42 @@
 import React from 'react';
 import { Container, Typography, Box, useTheme } from '@mui/material';
 
+// Use import.meta.env.BASE_URL for proper path resolution on GitHub Pages
+const getProjectLink = (filename) => `${import.meta.env.BASE_URL}projects/${filename}`;
+
 const projects = [
     {
     title: 'Road Building Machines Simulation Software',
-    link: './projects/road_building_machines_simulation_software.html',
+    link: getProjectLink('road_building_machines_simulation_software.html'),
     image: 'src/assets/img/road building.png',
   },
       {
     title: 'SyncForge – Reliable Event-Driven Microservices',
-    link: './projects/syncforge.html',
+    link: getProjectLink('syncforge.html'),
     image: 'src/assets/img/sync.png',
   },
   {
     title: 'Semantyx – Ontology Driven Knowledge System',
-    link: './projects/semantyx.html',
+    link: getProjectLink('semantyx.html'),
     image: 'src/assets/img/sym.png',
   },
   
   {
     title: 'Video Shots Time Detection',
-    link: './projects/video_shots_time_detection.html',
+    link: getProjectLink('video_shots_time_detection.html'),
     image: 'src/assets/img/projects6.jpg',
   },
   
  
   {
     title: 'Online Grocery Store',
-    link: './projects/online_grocery_store.html',
+    link: getProjectLink('online_grocery_store.html'),
     image: 'src/assets/img/projects4.jpg',
   },
  
   {
     title: 'Website Syncing Ebay Data',
-    link: './projects/website_syncing_ebay_data.html',
+    link: getProjectLink('website_syncing_ebay_data.html'),
     image: 'src/assets/img/projects8.png',
   },
 ];
